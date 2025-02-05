@@ -8,6 +8,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import MailIcon from '@mui/icons-material/Mail';
+import Typography from '@mui/material/Typography';
 
 export default function MenuAppBar() {
   const [auth] = React.useState(true);
@@ -35,6 +36,15 @@ export default function MenuAppBar() {
           >
             <MenuIcon />            
           </IconButton>
+          <Typography variant="h6" component="div" 
+            sx={{ flexGrow: 1, 
+              fontFamily: 'Papyrus', 
+              fontSize: '24px',
+              fontWeight: 'bold',
+              color: 'rgb(254, 254, 254)', 
+              textShadow: '2px 2px 5px rgba(17, 10, 86, 0.9)', }}>
+            Job Tracker
+          </Typography>
 
           {/* Right Section */}
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
