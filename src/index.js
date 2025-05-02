@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import TrackApplication from './Pages/TrackApplication';
 import MenuAppBar from './Pages/AppBar';
 import { Box } from "@mui/material";
+import CreateApplicationForm from './Pages/CreateApplicationForm';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,7 +15,8 @@ root.render(
     <MenuAppBar></MenuAppBar>
     {/* <DashboardLayoutNavigationDividers></DashboardLayoutNavigationDividers> */}
     <Box sx={{ mt: { xs: 7, sm: 8 } }}>
-      <TrackApplication></TrackApplication>
+      {/* <TrackApplication></TrackApplication> */}
+      <CreateApplicationForm></CreateApplicationForm>
     </Box>    
   </React.StrictMode>
 );
