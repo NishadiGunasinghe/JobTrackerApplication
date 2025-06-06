@@ -9,10 +9,16 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import MailIcon from '@mui/icons-material/Mail';
 import Typography from '@mui/material/Typography';
+import { useState } from "react";
+import Hamburger from 'hamburger-react'
+import SideBar from './SideBar';
 
 export default function MenuAppBar() {
   const [auth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const [isOpen, setOpen] = useState(false);
+  const toggleMenu = () => setOpen(prev => !prev);
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -26,16 +32,8 @@ export default function MenuAppBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar sx={{ display: 'flex' }}>
         <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
-          {/* Left Section */}
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />            
-          </IconButton>
+          <Hamburger rounded toggled={isOpen} toggle={setOpen} size={20}/>
+          {isOpen && <SideBar toggleMenu={toggleMenu} />}
           <Typography variant="h6" component="div" 
             sx={{ flexGrow: 1, 
               fontFamily: 'Papyrus', 
@@ -53,7 +51,7 @@ export default function MenuAppBar() {
               aria-label="mail"
               color="inherit"
               sx={{ marginRight: '1em' }}
-            />      
+            />  
             {auth && (
             <div>              
               <IconButton

@@ -18,6 +18,15 @@ export default function CreateApplicationForm () {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log("submitted");
+    }
+
+    const handleReset = (event) => {
+        console.log("reset");
+    }
+
     const formStyle = {
         marginLeft: "50px",
         width: "450px"
@@ -56,13 +65,11 @@ export default function CreateApplicationForm () {
         width: "600px"
     }
 
-    return (      
-
-        
+    return (           
         <div className="flex h-screen" style={formStyle}>
                 
         <h1 className="text-2xl font-bold my-4">Add Application Record</h1>
-        <form className="bg-gray-100 p-6 rounded-lg shadow-md w-1/2">
+        <form className="bg-gray-100 p-6 rounded-lg shadow-md w-1/2" onSubmit={handleSubmit} onReset={handleReset}>
             <div style={divStyle}>
                 <label style={labelStyle}>Job Category:</label>
                 <select 
@@ -130,10 +137,10 @@ export default function CreateApplicationForm () {
                 />
             </div>
             <div className="flex" style={buttonDiv}>
-                <button type="submit" style={buttonStyle}>Submit</button>
+                <input type="submit" style={buttonStyle} />
                 <div style={{width:"10px"}}></div>
-                <button type="reset" style={buttonStyle}>Clear</button>
-            </div>
+                <input type="reset" style={buttonStyle} />
+            </div>          
         </form>      
       </div>
     );
