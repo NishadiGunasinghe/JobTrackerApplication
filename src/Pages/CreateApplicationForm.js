@@ -24,8 +24,18 @@ export default function CreateApplicationForm () {
     }
 
     const handleReset = (event) => {
-        console.log("reset");
-    }
+        event.preventDefault(); // Optional, prevents default reset behavior
+        setFormData({
+            jobCategory: "",
+            jobRole: "",
+            company: "",
+            location: "",
+            status: "",
+            notes: "",
+        });
+        console.log("Form reset");
+    };
+
 
     const formStyle = {
         marginLeft: "50px",
