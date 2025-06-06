@@ -4,21 +4,22 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import TrackApplication from './Pages/TrackApplication';
-import MenuAppBar from './Pages/AppBar';
+import MenuAppBar from './Components/AppBar';
 import { Box } from "@mui/material";
 import CreateApplicationForm from './Pages/CreateApplicationForm';
+import { BrowserRouter } from "react-router-dom";
+import Routes from "./routePath";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <BrowserRouter>  
     {/* <App /> */}
     <MenuAppBar></MenuAppBar>
     {/* <DashboardLayoutNavigationDividers></DashboardLayoutNavigationDividers> */}
     <Box sx={{ mt: { xs: 7, sm: 8 } }}>
-      {/* <TrackApplication></TrackApplication> */}
-      <CreateApplicationForm></CreateApplicationForm>
+      <Routes />
     </Box>    
-  </React.StrictMode>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
