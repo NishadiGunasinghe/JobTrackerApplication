@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 import CreateApplicationForm from "./Pages/CreateApplicationForm";
 import TrackApplication from "./Pages/TrackApplication";
+import UserList from "./Pages/UserList";
 
 const NotFound = () => (
   <div className="text-center">
@@ -12,7 +13,7 @@ const NotFound = () => (
 
 const RoutePath = () => (
   <Routes>
-    <Route path="/" element={<TrackApplication />} />
+    <Route path="/" element={<UserList />} />
     <Route path="/CreateApplicationForm" element={<CreateApplicationForm />} />
     <Route path="/TrackApplication" element={<TrackApplication />} />
     <Route path="*" element={<NotFound />} />
