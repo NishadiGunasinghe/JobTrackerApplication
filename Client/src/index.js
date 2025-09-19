@@ -13,9 +13,7 @@ import Routes from "./routePath";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>  
-    {/* <App /> */}
     <MenuAppBar></MenuAppBar>
-    {/* <DashboardLayoutNavigationDividers></DashboardLayoutNavigationDividers> */}
     <Box sx={{ mt: { xs: 7, sm: 8 } }}>
       <Routes />
     </Box>    
